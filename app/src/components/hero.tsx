@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react"
 import Link from "next/link"
 import { TypeAnimation } from "react-type-animation"
+import Image from "next/image"
+
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -137,12 +139,15 @@ export default function Hero() {
             className="relative w-full h-full aspect-square max-w-md mx-auto lg:ml-auto"
           >
             <div className="w-full h-full rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="/images/profile/muhammad1.png?height=500&width=500"
+              <Image
+                src="/images/profile/muhammad1.png"
                 alt="Muhammad Tahir Kleem"
                 className="w-full h-full object-cover"
+                width={500}
+                height={500}
+                priority
               />
-            </div>
+            </div>`
           </motion.div>
         </div>
       </div>

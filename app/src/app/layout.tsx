@@ -19,11 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="theme-ocean">
-      <body
-        className={cn(inter.className, "antialiased")}
-        suppressHydrationWarning
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.className, "antialiased")} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <LoadingScreen />
           <div className="relative flex min-h-screen flex-col">

@@ -6,8 +6,9 @@ import { useInView } from "react-intersection-observer"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { Github } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface Project {
   id: number
@@ -34,7 +35,7 @@ export default function Projects() {
       title: "E-Commerce with KNN Recommendations",
       description:
         "A web-based e-commerce application built with Django, featuring a KNN model for personalized product recommendations and PayPal integration.",
-      image: "/images/projects/E-Commerce.jpg?height=300&width=500",
+      image: "/images/projects/E-Commerce.jpg",
       tags: ["Django", "Machine Learning", "KNN", "PayPal", "HTML/CSS"],
       githubUrl: "#",
       demoUrl: "#",
@@ -45,7 +46,7 @@ export default function Projects() {
       title: "MCQ-Based Test System",
       description:
         "A web-based MCQ test system for teachers with Django backend, React frontend, and NLP for automatic MCQ generation.",
-      image: "/images/projects/MCQ.png?height=300&width=500",
+      image: "/images/projects/MCQ.png",
       tags: ["Django", "React", "TypeScript", "NLP", "PostgreSQL"],
       demoUrl: "#",
       githubUrl: "#",
@@ -56,7 +57,7 @@ export default function Projects() {
       title: "AI-Based Recommendation System",
       description:
         "An AI-driven web app with React frontend and Django backend for personalized recommendations using GPT-based models.",
-      image: "/images/projects/recommendation-system.jpg?height=300&width=500",
+      image: "/images/projects/recommendation-system.jpg",
       tags: ["React", "TypeScript", "Django", "GPT", "PostgreSQL"],
       demoUrl: "#",
       githubUrl: "#",
@@ -67,7 +68,7 @@ export default function Projects() {
       title: "PSO Interactive Dashboard",
       description:
         "An interactive dashboard built with Plotly Dash for real-time data visualization with SQL database integration.",
-      image: "/images/projects/financial-mgmt.png?height=300&width=500",
+      image: "/images/projects/financial-mgmt.png",
       tags: ["Plotly Dash", "SQL", "Data Visualization", "Python"],
       demoUrl: "#",
       githubUrl: "#",
@@ -140,11 +141,15 @@ export default function Projects() {
             {filteredProjects.map((project) => (
               <motion.div key={project.id} variants={itemVariants}>
                 <Card className="h-full overflow-hidden border-none bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 hover:shadow-lg">
-                  <div className="aspect-video overflow-hidden">
-                    <img
+                  <div className="aspect-video overflow-hidden relative">
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: "cover" }}
+                      priority
                     />
                   </div>
                   <CardContent className="p-6">
