@@ -147,7 +147,7 @@ export default function Hero() {
                 height={500}
                 priority
               />
-            </div>`
+            </div>
           </motion.div>
         </div>
       </div>

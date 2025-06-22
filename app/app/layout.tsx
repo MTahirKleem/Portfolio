@@ -1,5 +1,5 @@
 import type React from "react"
-import "./globals.css"
+import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
@@ -9,18 +9,14 @@ import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  generator: 'v0.dev'
-};
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "antialiased")} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="theme-ocean">
+      <body className={cn(inter.className, "antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <LoadingScreen />
           <div className="relative flex min-h-screen flex-col">
@@ -33,3 +29,7 @@ export default function RootLayout({
     </html>
   )
 }
+
+export const metadata = {
+      generator: 'v0.dev'
+    };

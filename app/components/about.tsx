@@ -73,12 +73,12 @@ export default function About() {
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-2xl font-bold">My Journey</h3>
               <p className="text-foreground/70">
-                As an Associate Data Scientist at STECHAI, I&apos;ve been promoted within 3 months for increasing data model
+                As an Associate Data Scientist at STECHAI, I've been promoted within 3 months for increasing data model
                 accuracy by 15%. I collaborate with fellow data scientists to create solutions that have directly
-                impacted the company&apos;s growth by 24%.
+                impacted the company's growth by 24%.
               </p>
               <p className="text-foreground/70">
-                I&apos;ve engineered high-performance Django backend services and scalable FastAPI solutions, boosting user
+                I've engineered high-performance Django backend services and scalable FastAPI solutions, boosting user
                 traffic by 50% and tripling load capacity with 99.99% uptime.
               </p>
             </motion.div>
@@ -87,7 +87,7 @@ export default function About() {
               <h3 className="text-2xl font-bold">My Approach</h3>
               <p className="text-foreground/70">
                 I believe in a data-driven approach to problem-solving, combining analytical thinking with creative
-                solutions. I&apos;ve executed end-to-end AI applications &amp; chatbots, integrating with Streamlit for
+                solutions. I've executed end-to-end AI applications & chatbots, integrating with Streamlit for
                 businesses, aiding 83% in their growth strategies and enhancing customer engagement.
               </p>
               <p className="text-foreground/70">
