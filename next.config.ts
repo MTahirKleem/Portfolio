@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next';
-import path from 'path';
 
 const nextConfig: NextConfig = {
   // Remove output: 'export' for Netlify deployment
@@ -13,11 +12,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname, './src'),
-    };
+  webpack: (config, { isServer }) => {
+    // Add alias for @ to resolve to src directory
+    if (config.resolve.alias) {
+      config.resolve.alias['@'] = require('path').resolve(process.cwd(), 'src');
+    }
     return config;
   },
 };
