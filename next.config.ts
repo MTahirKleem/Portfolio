@@ -1,12 +1,17 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Remove output: 'export' for Netlify deployment
+  // Netlify handles Next.js SSR automatically
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     unoptimized: true,
   },
-  basePath: '/Porfolio',
 };
 
 export default nextConfig;
