@@ -1,8 +1,13 @@
+# Netlify configuration for Next.js deployment
 [build]
-  base = "."
+  # Base directory - explicitly set to root to override any UI settings
+  base = ""
+  # Build command
   command = "npm run build"
+  # Publish directory for Next.js
   publish = ".next"
 
+# Next.js plugin for optimal Netlify integration
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
