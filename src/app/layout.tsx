@@ -1,13 +1,17 @@
 import type React from "react"
-import "@/app/globals.css"
+import "./globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import ThemeCustomizer from "@/components/theme-customizer"
-import LoadingScreen from "@/components/loading"
+import { SmoothScroll } from "@/components/smooth-scroll"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] })
+
+export const metadata = {
+  generator: 'v0.dev'
+};
 
 export default function RootLayout({
   children,
@@ -16,20 +20,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="theme-ocean">
-      <body className={cn(inter.className, "antialiased")}>
+      <body
+        className={cn(inter.className, "antialiased")}
+        suppressHydrationWarning
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <LoadingScreen />
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <div className="flex-1">{children}</div>
-          </div>
+          <SmoothScroll>
+            <div className="relative flex min-h-screen flex-col">
+              <Navbar />
+              <div className="flex-1">{children}</div>
+            </div>
+          </SmoothScroll>
           <ThemeCustomizer />
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-export const metadata = {
-      generator: 'v0.dev'
-    };
