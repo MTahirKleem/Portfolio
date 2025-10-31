@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# lib/  # Commented out - this was blocking src/lib/ in Next.js project
 lib64/
 parts/
 sdist/
